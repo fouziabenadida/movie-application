@@ -4,7 +4,7 @@
     <v-container fluid>
    <v-row>
     <v-col cols="12" sm="3" v-for="(movie) in movies" :key="movie.id">
-   <MovieCard/>
+   <MovieCard :movie="movie"  :genres="genres"/>
     </v-col>
    </v-row>
     </v-container>
