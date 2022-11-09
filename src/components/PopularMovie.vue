@@ -3,7 +3,7 @@
     <h2 class="mt-2 grey--text">Popular Movie</h2>
     <v-container fluid>
    <v-row>
-    <v-col cols="12" sm="3" v-for="(movie,i) in movies" :key="i">
+    <v-col cols="12" sm="3" v-for="(movie) in movies" :key="movie.id">
    <MovieCard/>
     </v-col>
    </v-row>
