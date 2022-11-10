@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import MovieDetail from '../components/MovieDetail.vue'
+import Actors from '../components/Actors.vue'
 
 Vue.use(VueRouter)
 
@@ -15,6 +16,11 @@ const routes: Array<RouteConfig> = [
     path: '/movie/:id',
     name: 'Home',
     component:MovieDetail
+  },
+  {
+    path: '/actors',
+    name: 'actors',
+    component: Actors
   },
   {
     path: '/about',
