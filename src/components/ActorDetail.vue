@@ -48,7 +48,53 @@
           </v-card>
         </v-hover>
       </v-col>
+      <v-col cols="12" sm="8">
+        <h1 class="grey--text text--darken-3 mt-5">{{ this.actor.name }}</h1>
+        <v-row>
+          <v-col cols="12">
+            <v-btn text>
+              <v-icon color="error"> fas fa-birthday-cake</v-icon>
+            </v-btn>
+            <span class="grey--text">1988-12-16 (31)</span>
+          </v-col>
+        </v-row>
+        <p class="mt-5 grey--text text--darken-3 subheader">
+          {{ this.actor.biography }}
+        </p>
+        <h4 class="mt-1 grey--text">Known For</h4>
+        <v-row>
+          <v-col
+            cols="12"
+            sm="3"
+            class="mt-5"
+            v-for="movie in knownFor"
+            :key="movie.id"
+          >
+            <v-hover v-slot="{ hover }" open-delay="200">
+              <v-card
+                :elevation="hover ? 16 : 2"
+                :class="{ 'on-hover': hover }"
+              >
+                <router-link :to="`/movie/${movie.id}`">
+                  <v-img :src="movieImage(movie)" />
+                </router-link>
+              </v-card>
+            </v-hover>
+          </v-col>
+        </v-row>
+      </v-col>
     </v-row>
+    <v-divider class="mt-2"></v-divider>
+    <h2 class="mt-2 grey--text">Credits</h2>
+    <ul class="pl-5 mt-8">
+      <li v-for="cast in castMovies" :key="cast.id">
+        <strong>{{ castDetails(cast) }}</strong>
+        <v-btn text :to="`/movie/${cast.id}`">
+          {{ cast.title }}
+        </v-btn>
+        as {{ cast.character }}
+      </li>
+    </ul>
   </v-container>
 </template>
 
