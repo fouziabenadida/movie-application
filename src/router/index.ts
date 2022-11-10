@@ -3,7 +3,7 @@ import VueRouter, { RouteConfig } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import MovieDetail from '../components/MovieDetail.vue'
 import Actors from '../components/Actors.vue'
-
+import ActorDetail from '../components/ActorDetail.vue'
 Vue.use(VueRouter)
 
 const routes: Array<RouteConfig> = [
@@ -16,6 +16,11 @@ const routes: Array<RouteConfig> = [
     path: '/movie/:id',
     name: 'Home',
     component:MovieDetail
+  },
+  {
+    path: '/actor/:id',
+    name: 'actor',
+    component: ActorDetail
   },
   {
     path: '/actors',
